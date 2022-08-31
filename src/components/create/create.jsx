@@ -15,6 +15,7 @@ function Create() {
   const [profile,profilechanger]=useState("");
   const [title,titlechanger]=useState("");
   const [content,contentchanger]=useState("");
+  const [password,passwordchanger]=useState("");
 
   function subjecthandel(event){subjectchanger(event.target.value)}
   function picturehandel(event){picturechanger(event.target.value)}
@@ -22,19 +23,23 @@ function Create() {
   function profilehandel(event){profilechanger(event.target.value)}
   function titlehandel(event){titlechanger(event.target.value)}
   function contenthandel(event){contentchanger(event.target.value)}
+  function passwordhandel(event){passwordchanger(event.target.value)}
 
   function btnclicked(){
 
-    axios.post(process.env.REACT_APP_ADD_KEY,
-      {subject:subject,picture:picture,name:name,profile:profile,title:title,content:content});
-
-
-    subjectchanger("")
-    picturechanger("")
-    namechanger("")
-    profilechanger("")
-    titlechanger("")
-    contentchanger("")
+    if(password===process.env.REACT_APP_PASS_KEY){
+      axios.post(process.env.REACT_APP_ADD_KEY,
+        {subject:subject,picture:picture,name:name,profile:profile,title:title,content:content});
+      subjectchanger("")
+      picturechanger("")
+      namechanger("")
+      profilechanger("")
+      titlechanger("")
+      contentchanger("")
+    }
+    else{
+      console.log("wrong password");
+    }
   }
 
 
@@ -96,6 +101,26 @@ function Create() {
               <label>Content</label>
             </div>
           </div>
+
+
+
+
+
+          <div className="col-12">     
+            <div className="floating-label">      
+              <input  onChange={passwordhandel} value={password} className="floating-input" type="password" placeholder=" "/>
+              <label>Password</label>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
           <div style={{padding:"2.5%"}}/>
         </div>
         <div className="create_btn_div">

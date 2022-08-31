@@ -9,7 +9,7 @@ function Recent(props) {
       <div style={{padding:"1%"}}/>
       <div className="row recent_data">
         <div className="col-md-4 col-sm-12 yy">
-          <img src={props.fullone.picture} className="recent_img"/>
+          <img src={props.fullone.picture} alt="MainPicture" className="recent_img"/>
         </div>
 
         <div className="pp col-md-8 col-sm-12">
@@ -20,7 +20,7 @@ function Recent(props) {
             <span className="recent_title">{props.fullone.title}</span>
             <span className="recent_details">{props.fullone.content}</span>
             <div style={{padding:"2.5%"}}/>
-            <img className="recent_profile" src={props.fullone.profile}/>
+            <img className="recent_profile" alt="ProfilePicture" src={props.fullone.profile}/>
             <span className="recent_name">{props.fullone.name}</span>
             <div style={{padding:"1%"}}/>
         </div>

@@ -1,0 +1,19 @@
+.about_div{
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.about_lines{
+    padding-top: 30vh;
+    text-align: center;
+}
+
+.about_line_one{
+    display: block;
+    font-size: 50px;
+}
+
+.about_line_two{
+    display: block;
+    font-size: 50px;
+}

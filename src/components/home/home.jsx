@@ -26,6 +26,7 @@ function Home() {
     if(data===null){
       return(
         <div className="why">
+          <h1 className="why_line">Loading...</h1>
         </div>
       )
     }

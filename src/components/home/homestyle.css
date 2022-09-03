@@ -1,4 +1,10 @@
 .why{
     text-align: center;
     height: 100vh;
+    text-align: center;
+}
+
+.why_lineone{
+    color: black;
+    font-size: 10vw;
 }

@@ -9,6 +9,8 @@ import { motion } from "framer-motion";
 
 function Create() {
 
+  const [alert,alertchanger]=useState("")
+
   const [subject,subjectchanger]=useState("");
   const [picture,picturechanger]=useState("");
   const [name,namechanger]=useState("");
@@ -36,9 +38,16 @@ function Create() {
       profilechanger("")
       titlechanger("")
       contentchanger("")
+      alertchanger("Blog Submited");
+      setTimeout(function(){
+        alertchanger("");
+      }, 2000)
     }
     else{
-      console.log("wrong password");
+      alertchanger("Wrong Password Please Check Again");
+      setTimeout(function(){
+        alertchanger("");
+      }, 2000)
     }
   }
 
@@ -72,16 +81,12 @@ function Create() {
               <label>Name</label>
             </div>
           </div>
-
           <div className="col-md-6 col-sm-12">     
             <div className="floating-label">      
               <input onChange={profilehandel} value={profile} className="floating-input" type="text" placeholder=" "/>
               <label>Profile Url</label>
             </div>
           </div>
-
-
-
 
           <div className="col-12" style={{padding:"1%"}}/>
 
@@ -92,7 +97,6 @@ function Create() {
             </div>
           </div>
 
-          
           <div className="col-12" style={{padding:"1%"}}/>
 
           <div className="col-12">     
@@ -102,9 +106,7 @@ function Create() {
             </div>
           </div>
 
-
-
-
+          <div className="col-12" style={{padding:"1%"}}/>
 
           <div className="col-12">     
             <div className="floating-label">      
@@ -113,19 +115,17 @@ function Create() {
             </div>
           </div>
 
+          <div style={{padding:"1%"}}/>
 
-
-
-
-
-
-
-
-          <div style={{padding:"2.5%"}}/>
         </div>
         <div className="create_btn_div">
           <button onClick={btnclicked} className="create_btn">Add</button>
         </div>
+
+        <div style={{padding:"0.25%"}}/>
+
+        <p className="create_alert">{alert}</p>
+
         <div style={{padding:"2.5%"}}/>
       </div>
     </motion.div>

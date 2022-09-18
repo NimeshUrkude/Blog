@@ -7,8 +7,12 @@ import Other from "./other/other.jsx";
 import axios from "axios";
 import { motion } from "framer-motion";
 
+import { useDispatch } from "react-redux";
+import {setData} from "../react/actions/dataaction.js";
+
 function Home() {
-  
+
+  const dispatch = useDispatch();
   const [data,datachanger]=useState(null);
 
   
@@ -16,13 +20,12 @@ function Home() {
       async function fetchapi(){
         await axios.get(process.env.REACT_APP_COUT_KEY).then(function(res){
           datachanger(res.data);
-          console.log(data);
+          dispatch(setData(res.data));
         })
       }
       fetchapi()
     },[]);
 
-    
     if(data===null){
       return(
         <div className="why">
@@ -30,23 +33,23 @@ function Home() {
         </div>
       )
     }
-
-    return(
-      <>
-        <motion.div initial={{opacity:0 , scale:0.5}} animate={{opacity:1 , scale:1}} transition={{duration:1}}v className="container">
-          <Recent fullone={data[(data.length-1)]} />
+    else{
+      return(
+        <motion.div initial={{opacity:0 , scale:0.5}} animate={{opacity:1 , scale:1}} transition={{duration:1}} className="container">
+          <Recent fullone={data[(data.length-1)]} pos={(data.length-1)} />
           <div className="row">
-          {data.map(function(da,index){
-            if(index!==(data.length-1)){
-              return <Other full={da}/>
-            }
-          })}
-
-          </div>
-          <div style={{padding:"2%"}}/>
-        </motion.div>  
-      </>
-    )  
+              {data.map(function(da,index){
+                if(index!==(data.length-1)){
+                  return <Other full={da} pos={index} key={index}/>
+              }
+           })}
+        </div>
+        <div style={{padding:"2%"}}/>
+      </motion.div>
+      )
+    }
+    
+  
 }
 
 

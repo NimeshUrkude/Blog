@@ -9,6 +9,7 @@ import Home from "./home/home.jsx";
 import Create from "./create/create.jsx";
 import About from "./about/about.jsx";
 import Footer from "./footer/footer.jsx";
+import Otherinner from "./otherinner/otherinner.jsx";
 
 function App() {
   const location = useLocation();
@@ -20,7 +21,8 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/Blog" element={<Home/>}/>
           <Route path="/Blog/create" element={<Create/>}/>
-          <Route path="/Blog/about" element={<About/>}/>         
+          <Route path="/Blog/about" element={<About/>}/>     
+          <Route path="/Blog/page/:page" element={<Otherinner/>}/>     
         </Routes>
       </AnimatePresence>
 

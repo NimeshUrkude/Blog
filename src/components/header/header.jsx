@@ -16,9 +16,9 @@ function Name() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link><Link to="/Blog" className="header_link">Home</Link></Nav.Link>
-            <Nav.Link><Link to="/Blog/create" className="header_link">Create</Link></Nav.Link>
-            <Nav.Link><Link to="/Blog/about" className="header_link">About</Link></Nav.Link>
+            <Link to="/Blog" className="header_link">Home</Link>
+            <Link to="/Blog/create" className="header_link">Create</Link>
+            <Link to="/Blog/about" className="header_link">About</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

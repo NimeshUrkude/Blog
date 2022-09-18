@@ -18,7 +18,8 @@
     color: #37424f;
     font-size: 18px;
     font-family: 'Inter', sans-serif;
-    text-decoration: none;   
+    text-decoration: none; 
+    padding: 8px;  
 
 }
 .header_link:hover{

@@ -8,7 +8,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 
 import { useDispatch } from "react-redux";
-import {setData} from "../react/actions/dataaction.js";
+import {setData} from "../redux/actions/dataaction.js";
 
 function Home() {
 

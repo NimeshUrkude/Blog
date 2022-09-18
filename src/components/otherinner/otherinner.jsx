@@ -15,11 +15,11 @@ function Otherinner() {
     <motion.div initial={{opacity:0 , scale:0.5}} animate={{opacity:1 , scale:1}} transition={{duration:1}} className="container otherinnerdiv">
       <div style={{padding:"3%"}}/>
             <div className="row otherinner_data">
-        <div className="col-md-5 col-sm-12 otherinner_alldatas_left">
+        <div className="col-lg-5 col-md-12 otherinner_alldatas_left">
           <img src={alldata.alldata.data[page].picture} alt="MainPicture" className="otherinner_img"/>
         </div>
 
-        <div className="otherinner_alldatas_right col-md-7 col-sm-12">
+        <div className="otherinner_alldatas_right col-lg-7 col-md-12">
             <div style={{padding:"1%"}}/>
             <span className="otherinner_subject">{alldata.alldata.data[page].subject}</span>
             <span className="otherinner_date">{alldata.alldata.data[page].date.slice(0,10)}</span>

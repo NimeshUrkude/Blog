@@ -10,6 +10,8 @@ import Create from "./create/create.jsx";
 import About from "./about/about.jsx";
 import Footer from "./footer/footer.jsx";
 import Otherinner from "./otherinner/otherinner.jsx";
+import Error from "./error/Error.jsx";
+import Admin from "./admin/Admin.jsx";
 
 function App() {
   const location = useLocation();
@@ -22,7 +24,9 @@ function App() {
           <Route path="/Blog" element={<Home/>}/>
           <Route path="/Blog/create" element={<Create/>}/>
           <Route path="/Blog/about" element={<About/>}/>     
-          <Route path="/Blog/page/:page" element={<Otherinner/>}/>     
+          <Route path="/Blog/page/:page" element={<Otherinner/>}/> 
+          <Route path="/Blog/admin" element={<Admin/>}/> 
+          <Route path="/Blog/*" element={<Error/>}/>    
         </Routes>
       </AnimatePresence>
 

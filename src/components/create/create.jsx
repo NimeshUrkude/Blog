@@ -4,9 +4,6 @@ import "./createstyle.css"
 import axios from "axios";
 import { motion } from "framer-motion";
 
-
-
-
 function Create() {
 
   const [alert,alertchanger]=useState("")

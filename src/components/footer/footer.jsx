@@ -1,5 +1,6 @@
 import React from "react";
 import "./footerstyle.css"
+import {Link} from "react-router-dom";
 
 function Footer() {
   return(
@@ -22,6 +23,7 @@ function Footer() {
             <span className="footer_right_txt">Home</span>
             <span className="footer_right_txt">Create</span>
             <span className="footer_right_txt">About</span>
+            <Link to="/Blog/admin" className="footer_right_txt footer_right_txt_admin">Admin</Link>
           </div>
 
           
